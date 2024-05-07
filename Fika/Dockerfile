@@ -21,7 +21,7 @@ RUN git config --global http.postBuffer 157286400
 RUN git clone https://github.com/nvm-sh/nvm.git $HOME/.nvm || true
 RUN \. $HOME/.nvm/nvm.sh && nvm install $NODE
 ## Clone the SPT AKI repo or continue if it exist
-RUN git clone --branch $SPT_BRANCH https://dev.sp-tarkov.com/SPT-AKI/Server.git srv || true
+RUN git clone --branch $SPT_BRANCH https://dev.sp-tarkov.com/SPT-AKI/Server.git srv
 
 ## Check out and git-lfs (specific commit --build-arg SPT=xxxx)
 WORKDIR /opt/srv/project 
