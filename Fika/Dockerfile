@@ -15,6 +15,8 @@ WORKDIR /opt
 
 # Install git git-lfs curl
 RUN apt update && apt install -yq git git-lfs curl
+# Set git to solve ssl error
+RUN git config --global http.postBuffer 157286400
 # Install Node Version Manager and NodeJS
 RUN git clone https://github.com/nvm-sh/nvm.git $HOME/.nvm || true
 RUN \. $HOME/.nvm/nvm.sh && nvm install $NODE
